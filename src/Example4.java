@@ -1,26 +1,30 @@
 public class Example4 {
 
     public static void main(String[] args) throws InterruptedException {
-        Stopwatch sw = new Stopwatch();
-        int[][] array = new int[512][512];
+        Stopwatch sw = new Stopwatch("Example 4: Locality and order of access");
 
-        sw.start("2D Array", 2180);
-        for (int i = 0; i < 1000; i++) {
-            for (int y = 0; y < 512; y++) {
-                for (int x = 0; x < 512; x++) {
-                    array[x][y]++;
+        int n = 1024;
+        int[][] array = new int[n][n];
+
+        sw.start(500);
+        for (int i = 0; i < n; i++) {
+            for (int y = 0; y < n; y++) {
+                for (int x = 0; x < n; x++) {
+                    array[y][x]++;
                 }
             }
         }
         sw.stop();
-        sw.start("2D Array", 166);
-        for (int i = 0; i < 1000; i++) {
-            for (int x = 0; x < 512; x++) {
-                for (int y = 0; y < 512; y++) {
+
+        sw.start(9000);
+        for (int i = 0; i < n; i++) {
+            for (int y = 0; y < n; y++) {
+                for (int x = 0; x < n; x++) {
                     array[x][y]++;
                 }
             }
         }
         sw.stop();
     }
+
 }
