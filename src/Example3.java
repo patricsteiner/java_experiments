@@ -25,7 +25,7 @@ public class Example3 {
 
         sw.start(900);
         for (int i = 0; i < 4; i++) {
-            int finalI = i; // because we cannot use non-finals in lambdas
+            int finalI = i;
             new Thread(() -> { update(finalI * 16); cdl.countDown(); }).start();
         }
         cdl.await();
