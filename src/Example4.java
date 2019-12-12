@@ -1,6 +1,6 @@
 public class Example4 {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         var sw = new Stopwatch("Example 4: Locality and order of access");
 
         int n = 1024;

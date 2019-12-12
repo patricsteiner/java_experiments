@@ -3,7 +3,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Example5 {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         var sw = new Stopwatch("Example 5: Branch prediction");
 
         int n = 30_000;
